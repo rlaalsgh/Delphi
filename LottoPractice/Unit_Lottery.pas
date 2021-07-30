@@ -78,10 +78,10 @@ implementation
 procedure TMainForm.Btn_Click_ResetClick(Sender: TObject);
 begin
   LBox_Click_Result.Clear;
-  Lbl_Click_Total.Text := 'Âü¿©ÀÎ¿ø : 0';
+  Lbl_Click_Total.Text := 'ì°¸ì—¬ì¸ì› : 0';
   Btn_Click_Submit.Enabled := True;
   Btn_Click_Start.Enabled := True;
-  RBtn_YN.IsChecked := False;        //¼öÁ¤µÊ
+  RBtn_YN.IsChecked := False;        //ìˆ˜ì •ë¨
   RBtn_YN.Enabled := True;
   RBtn_Normal.IsChecked := False;
   RBtn_Normal.Enabled := True;
@@ -97,7 +97,7 @@ begin
   begin
     Agree := LastButton.Tag;
     disAgree := LastButton2.Tag;
-    LBox_Click_Result.ItemByIndex(0).Text := LBox_Click_Result.ItemByIndex(0).Text + '   [Âù¼º : ' + IntToStr(Agree) + '] [¹İ´ë : ' + IntToStr(disAgree) + ']';
+    LBox_Click_Result.ItemByIndex(0).Text := LBox_Click_Result.ItemByIndex(0).Text + '   [ì°¬ì„± : ' + IntToStr(Agree) + '] [ë°˜ëŒ€ : ' + IntToStr(disAgree) + ']';
     Btn_Click_Submit.Enabled := False;
     Btn_Click_Start.Enabled := False;
   end
@@ -108,7 +108,7 @@ begin
       if Assigned(LastButton) then
       begin
         LastButton.Visible := False;
-        (LastButton.Parent as TListBoxItem).IsSelected := False; // Ãß°¡µÊ
+        (LastButton.Parent as TListBoxItem).IsSelected := False; // ì¶”ê°€ë¨
       end;
 
       LBox_Click_Result.OnItemClick := nil;
@@ -140,26 +140,27 @@ begin
            J := 0;
           end;
           Inc(J);
-          tmpListBox.ItemByIndex(0).Text := '[' + IntToStr(I+1-J) + 'µî] --- ' + tmpListBox.ItemByIndex(0).Text + '  [°á°ú : ' + IntToStr(tmpListBox.ItemByIndex(0).Tag) + ']';
+          tmpListBox.ItemByIndex(0).Text := '[' + IntToStr(I+1-J) + 'ë“±] --- ' + tmpListBox.ItemByIndex(0).Text + '  [ê²°ê³¼ : ' + IntToStr(tmpListBox.ItemByIndex(0).Tag) + ']';
           exI := I;
         end
         else
         begin
-          tmpListBox.ItemByIndex(0).Text := '[' + IntToStr(I+1) + 'µî] --- ' + tmpListBox.ItemByIndex(0).Text + '  [°á°ú : ' + IntToStr(tmpListBox.ItemByIndex(0).Tag) + ']';
+          tmpListBox.ItemByIndex(0).Text := '[' + IntToStr(I+1) + 'ë“±] --- ' + tmpListBox.ItemByIndex(0).Text + '  [ê²°ê³¼ : ' + IntToStr(tmpListBox.ItemByIndex(0).Tag) + ']';
         end;
         tmpListBox.ItemByIndex(0).Selectable := False;
         tmpListBox.ItemByIndex(0).HitTest := False;
         LBox_Click_Result.AddObject(tmpListBox.ItemByIndex(0));
         Inc(I);
-        // ´Ù ÀÎµ¦½º°¡ 0 ÀÎ ÀÌÀ¯ : ÇÏ³ª¾¿ ¾ÆÀÌÅÛÀÌ À§¿¡¼­ºÎÅÍ  ¼Ò°ÅµÇ¸é¼­ ¿Å°ÜÁö±â ¶§¹®¿¡
-        // Ç×»ó À§¿¡²¬ ¿Å°ÜÁÖ±â À§ÇØ ÀÎµ¦½º 0 À¸·Î ¼³Á¤ÇÔ
+        // ë‹¤ ì¸ë±ìŠ¤ê°€ 0 ì¸ ì´ìœ  : í•˜ë‚˜ì”© ì•„ì´í…œì´ ìœ„ì—ì„œë¶€í„°  ì†Œê±°ë˜ë©´ì„œ ì˜®ê²¨ì§€ê¸° ë•Œë¬¸ì—
+        // í•­ìƒ ìœ„ì—ê»„ ì˜®ê²¨ì£¼ê¸° ìœ„í•´ ì¸ë±ìŠ¤ 0 ìœ¼ë¡œ ì„¤ì •í•¨
+        // ì¸ë±ìŠ¤ ìœ„ì¹˜ ì¤‘ìš”
       end;
       Btn_Click_Submit.Enabled := False;
       Btn_Click_Start.Enabled := False;
     end
     else
     begin
-      ShowMessage('2¸í ÀÌ»óÀÌ ÀÖ¾î¾ß ¼øÀ§¸¦ ¸Å±æ ¼ö ÀÖ½À´Ï´Ù.');
+      ShowMessage('2ëª… ì´ìƒì´ ìˆì–´ì•¼ ìˆœìœ„ë¥¼ ë§¤ê¸¸ ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
     end;
   end;
 end;
@@ -168,19 +169,19 @@ procedure TMainForm.Btn_Click_SubmitClick(Sender: TObject);
 var
   Item : TListBoxItem;
 begin
-  if (RBtn_YN.IsChecked) OR (RBtn_Normal.IsChecked) then // ¼öÁ¤µÊ
+  if (RBtn_YN.IsChecked) OR (RBtn_Normal.IsChecked) then // ìˆ˜ì •ë¨
   begin
 
     if (LBox_Click_Result.Count > 0) AND (RBtn_YN.IsChecked = True) then
     begin
-      ShowMessage('Âù¹İÅõÇ¥´Â µî·ÏÀÚ 1¸í¸¸ °¡´ÉÇÕ´Ï´Ù.');
+      ShowMessage('ì°¬ë°˜íˆ¬í‘œëŠ” ë“±ë¡ì 1ëª…ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.');
       Edit_Click.Text := '';
       exit;
     end;
 
     if Edit_Click.Text = '' then
     begin
-      ShowMessage('ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.');
+      ShowMessage('ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.');
       Exit;
     end
     else
@@ -191,7 +192,7 @@ begin
       Item.Tag := 0;
       Item.ItemData.Detail := IntToStr(LBox_Click_Result.Count + 1);
       LBox_Click_Result.AddObject(Item);
-      Lbl_Click_Total.Text := 'Âü¿©ÀÎ¿ø : ' + IntToStr(LBox_Click_Result.Count);
+      Lbl_Click_Total.Text := 'ì°¸ì—¬ì¸ì› : ' + IntToStr(LBox_Click_Result.Count);
     end;
 
     RBtn_YN.Enabled := False;
@@ -208,10 +209,10 @@ begin
   end
   else
   begin
-    ShowMessage('ÅõÇ¥ Å¸ÀÔÀ» ¼±ÅÃÇØ ÁÖ½Ê½Ã¿À.');
+    ShowMessage('íˆ¬í‘œ íƒ€ì…ì„ ì„ íƒí•´ ì£¼ì‹­ì‹œì˜¤.');
   end;
 end;
-
+// ì°¬ë°˜ íˆ¬í‘œ ì •í•˜ëŠ” ê³³
 procedure TMainForm.Btn_goClickClick(Sender: TObject);
 begin
   TabControl_Lott.ActiveTab := TabItem_Click;
@@ -222,8 +223,8 @@ begin
   TabControl_Lott.ActiveTab := TabItem_Main;
   LBox_Num_Result.Clear;
   LBox_Click_Result.Clear;
-  Lbl_Num_Total.Text := 'Âü¿©ÀÎ¿ø : 0';
-  Lbl_Click_Total.Text := 'Âü¿©ÀÎ¿ø : 0';
+  Lbl_Num_Total.Text := 'ì°¸ì—¬ì¸ì› : 0';
+  Lbl_Click_Total.Text := 'ì°¸ì—¬ì¸ì› : 0';
   Edit_Num.Text := '';
   Edit_Click.Text := '';
   Edit_Num_Count.Text := '';
@@ -238,7 +239,7 @@ end;
 
 procedure TMainForm.Btn_Num_ResetClick(Sender: TObject);
 begin
-  Lbl_Num_Total.Text := 'Âü¿©ÀÎ¿ø : 0';
+  Lbl_Num_Total.Text := 'ì°¸ì—¬ì¸ì› : 0';
   Edit_Num_Count.Text := '';
   Btn_Num_Submit.Enabled := True;
   Btn_Num_Start.Enabled := True;
@@ -253,16 +254,16 @@ var
 begin
   if Edit_Num_Count.Text = '' then
   begin
-    ShowMessage('ÃßÃ·ÀÎ¿øÀ» Àû¾îÁÖ¼¼¿ä.');
+    ShowMessage('ì¶”ì²¨ì¸ì›ì„ ì ì–´ì£¼ì„¸ìš”.');
     exit;
   end
   else if StrToInt(Edit_Num_Count.Text) <= 0 then
   begin
-    ShowMessage('ÃßÃ·ÀÎ¿øÀº 0 ÀÌÇÏ°¡ µÉ ¼ö ¾ø½À´Ï´Ù.');
+    ShowMessage('ì¶”ì²¨ì¸ì›ì€ 0 ì´í•˜ê°€ ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');
   end
   else if LBox_Num_Result.Count < StrToInt(Edit_Num_Count.Text) then
   begin
-    ShowMessage('ÃßÃ· ÇÒ ÀÎ¿øÀÌ µî·ÏµÈ ÀÎ¿øº¸´Ù ¸¹½À´Ï´Ù.');  // Ãß°¡µÊ
+    ShowMessage('ì¶”ì²¨ í•  ì¸ì›ì´ ë“±ë¡ëœ ì¸ì›ë³´ë‹¤ ë§ìŠµë‹ˆë‹¤.');  // ì¶”ê°€ë¨
   end
   else
   begin
@@ -272,7 +273,7 @@ begin
     for I := 0 to SelCount-1 do
     begin
       RanNum := Random(tmpListBox.Count);
-      tmpListbox.ItemByIndex(RanNum).Text := '[' + IntToStr(I+1) + 'µî] ---' + tmpListbox.ItemByIndex(RanNum).Text;
+      tmpListbox.ItemByIndex(RanNum).Text := '[' + IntToStr(I+1) + 'ë“±] ---' + tmpListbox.ItemByIndex(RanNum).Text;
       Lbox_Num_Result.AddObject(tmpListbox.ItemByIndex(RanNum));
     end;
     Btn_Num_Submit.Enabled := False;
@@ -291,9 +292,9 @@ begin
   begin
     for I := 0 to Lbox_Num_Result.Count-1 do
     begin
-      if Lbox_Num_Result.ItemByIndex(I).Tag = IValue then
+      if Lbox_Num_Result.ItemByIndex(I).Tag = IValue then // ê²°ê³¼ íƒœê·¸ ì „ë‹¬  ë‹¤ë¥¸ë°©ë²•  ìˆìŒ ë°ë¸Œê¸°ì–´;; ë‚˜ì¤‘ì— ìˆ˜ì •
       begin
-        ShowMessage('Áßº¹µÇ´Â ¼ıÀÚÀÔ´Ï´Ù.');
+        ShowMessage('ì¤‘ë³µë˜ëŠ” ìˆ«ìì…ë‹ˆë‹¤.');
         Edit_Num.Text := '';
         Exit;
       end;
@@ -303,11 +304,11 @@ begin
     Item.Text := '(' + IntToStr(LBox_Num_Result.Count + 1) + ') ' + Edit_Num.Text;
     Item.Tag := IValue;
     LBox_Num_Result.AddObject(Item);
-    Lbl_Num_Total.Text := 'Âü¿©ÀÎ¿ø : ' + IntToStr(LBox_Num_Result.Count);
+    Lbl_Num_Total.Text := 'ì°¸ì—¬ì¸ì› : ' + IntToStr(LBox_Num_Result.Count);
   end
   else
   begin
-    ShowMessage('100¸¸ ¹Ì¸¸ÀÇ ¾çÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.');
+    ShowMessage('100ë§Œ ë¯¸ë§Œì˜ ì–‘ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.');
   end;
   Edit_Num.Text := '';
 end;
@@ -333,7 +334,7 @@ var
   Btn : TButton;
   Btn2 : TButton;
 begin
-  if RBtn_YN.IsChecked then          // ¼öÁ¤µÊ
+  if RBtn_YN.IsChecked then          // ìˆ˜ì •ë¨
   begin
     if Item.FindComponent('ItemBtnYes' + IntToStr(Item.Tag)) = nil then
     begin
@@ -343,7 +344,7 @@ begin
       Btn2.Tag := 0;
       Btn2.Align := TAlignLayout.Right;
       Btn2.Width := 100;
-      Btn2.Text := '¹İ´ë';
+      Btn2.Text := 'ë°˜ëŒ€';
       Btn2.OnClick := ListBoxItemButtonClick;
 
       Btn := TButton.Create(Item);
@@ -352,7 +353,7 @@ begin
       Btn.Tag := 0;
       Btn.Align := TAlignLayout.Right;
       Btn.Width := 100;
-      Btn.Text := 'Âù¼º';
+      Btn.Text := 'ì°¬ì„±';
       Btn.OnClick := ListBoxItemButtonClick;
     end
     else
@@ -376,7 +377,7 @@ begin
       Btn.Name := 'ItemBtn' + IntToStr(Item.Tag);
       Btn.Align := TAlignLayout.Right;
       Btn.Width := 100;
-      Btn.Text := '¼±ÅÃ';
+      Btn.Text := 'ì„ íƒ';
       Btn.OnClick := ListBoxItemButtonClick;
 
     end
@@ -402,7 +403,7 @@ begin
     (Sender as TButton).Visible := False;
     ((Sender as TButton).Parent as TListBoxItem).IsSelected := False;
     ((Sender as TButton).Parent as TListBoxItem).Tag := ((Sender as TButton).Parent as TListBoxItem).Tag + 1;
-    ShowMessage(((Sender as TButton).Parent as TListBoxItem).Text + ' ¿¡°Ô 1Ç¥ ÁÖ¾ú½À´Ï´Ù.');
+    ShowMessage(((Sender as TButton).Parent as TListBoxItem).Text + ' ì—ê²Œ 1í‘œ ì£¼ì—ˆìŠµë‹ˆë‹¤.');
   end
   else
   begin
@@ -410,15 +411,15 @@ begin
     LastButton2.Visible := False;
     ((Sender as TButton).Parent as TListBoxItem).IsSelected := False;
 
-    if (Sender as TButton).Text = 'Âù¼º' then
+    if (Sender as TButton).Text = 'ì°¬ì„±' then 
     begin
       (Sender as TButton).Tag := (Sender as TButton).Tag + 1;
-      ShowMessage(((Sender as TButton).Parent as TListBoxItem).Text + ' ¿¡°Ô Âù¼º 1Ç¥ ÁÖ¾ú½À´Ï´Ù.');
+      ShowMessage(((Sender as TButton).Parent as TListBoxItem).Text + ' ì—ê²Œ ì°¬ì„± 1í‘œ ì£¼ì—ˆìŠµë‹ˆë‹¤.');
     end
     else
     begin
       (Sender as TButton).Tag := (Sender as TButton).Tag + 1;
-      ShowMessage(((Sender as TButton).Parent as TListBoxItem).Text + ' ¿¡°Ô ¹İ´ë 1Ç¥ ÁÖ¾ú½À´Ï´Ù.');
+      ShowMessage(((Sender as TButton).Parent as TListBoxItem).Text + ' ì—ê²Œ ë°˜ëŒ€ 1í‘œ ì£¼ì—ˆìŠµë‹ˆë‹¤.');
     end;
     ((Sender as TButton).Parent as TListBoxItem).IsSelected := False;
 
