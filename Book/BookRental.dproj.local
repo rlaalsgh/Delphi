@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/07/30 15:16:45.773.pas,C:\Users\Administrator\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\Administrator\Desktop\김민호\Book\MainForm.pas</Transaction>
+    <Transaction>2021/07/30 15:16:45.773.dfm,C:\Users\Administrator\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\Administrator\Desktop\김민호\Book\MainForm.dfm</Transaction>
+    <Transaction>2021/07/30 15:17:01.968.dproj,C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Administrator\Desktop\김민호\Book\BookRental.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

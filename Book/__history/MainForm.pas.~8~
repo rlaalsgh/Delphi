@@ -1,0 +1,26 @@
+unit MainForm;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, ToolWin, ActnMan, ActnCtrls;
+
+type
+  TTMainForm = class(TForm)
+    ActionToolBar1: TActionToolBar;
+    Panel1: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TMainForm: TTMainForm;
+
+implementation
+
+{$R *.dfm}
+
+end.

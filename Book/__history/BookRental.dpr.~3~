@@ -1,0 +1,14 @@
+program BookRental;
+
+uses
+  Forms,
+  MainForm in 'MainForm.pas' {frmName};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmName, frmName);
+  Application.Run;
+end.

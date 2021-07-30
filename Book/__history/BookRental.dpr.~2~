@@ -1,0 +1,14 @@
+program BookRental;
+
+uses
+  Forms,
+  MainForm in 'MainForm.pas' {도서대여프로그램};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(T도서대여프로그램, 도서대여프로그램);
+  Application.Run;
+end.
