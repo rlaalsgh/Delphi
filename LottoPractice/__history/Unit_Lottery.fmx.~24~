@@ -1,0 +1,321 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'Lottery'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TabControl_Lott: TTabControl
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 407.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = None
+    object TabItem_Main: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem_Main'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Btn_goClick: TButton
+        Align = Right
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = -30.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = #51060#47492#52628#52392
+        TextSettings.Font.Size = 30.000000000000000000
+        TextSettings.WordWrap = True
+        OnClick = Btn_goClickClick
+      end
+      object Btn_goNum: TButton
+        Align = Left
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 80.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = #48264#54840#52628#52392
+        TextSettings.Font.Size = 30.000000000000000000
+        TextSettings.WordWrap = True
+        OnClick = Btn_goNumClick
+      end
+    end
+    object TabItem_Click: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem_Click'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ScrollBox_Click: TScrollBox
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 407.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 640.000000000000000000
+        Viewport.Height = 407.000000000000000000
+        object LayoutC1: TLayout
+          Align = Left
+          Size.Width = 313.000000000000000000
+          Size.Height = 407.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Btn_Click_Reset: TButton
+            Position.X = 80.000000000000000000
+            Position.Y = 296.000000000000000000
+            Size.Width = 129.000000000000000000
+            Size.Height = 57.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = #52488#44592#54868
+            OnClick = Btn_Click_ResetClick
+          end
+          object Btn_Click_Start: TButton
+            Position.X = 168.000000000000000000
+            Position.Y = 176.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Text = #44208#44284#54869#51064
+            OnClick = Btn_Click_StartClick
+          end
+          object Btn_Click_Submit: TButton
+            Position.X = 48.000000000000000000
+            Position.Y = 176.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = #46321#47197
+            OnClick = Btn_Click_SubmitClick
+          end
+          object Edit_Click: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 3
+            Position.X = 136.000000000000000000
+            Position.Y = 81.000000000000000000
+          end
+          object Lbl_Name: TLabel
+            Position.X = 48.000000000000000000
+            Position.Y = 77.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = #51060#47492' :'
+          end
+          object Lbl_Click_Total: TLabel
+            Position.X = 64.000000000000000000
+            Position.Y = 240.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = #52280#50668#51064#50896' : 0'
+          end
+          object RBtn_YN: TRadioButton
+            GroupName = '1'
+            Position.X = 48.000000000000000000
+            Position.Y = 120.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            Text = #52268#48152#53804#54364
+            OnClick = RBtn_YNClick
+          end
+          object RBtn_Normal: TRadioButton
+            GroupName = '1'
+            Position.X = 168.000000000000000000
+            Position.Y = 120.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 35.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            Text = #51068#48152#53804#54364
+          end
+        end
+        object LBox_Click_Result: TListBox
+          Align = Left
+          Position.X = 313.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 407.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          OnItemClick = LBox_Click_ResultItemClick
+          Viewport.Width = 296.000000000000000000
+          Viewport.Height = 403.000000000000000000
+        end
+      end
+    end
+    object TabItem_Num: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem_Num'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ScrollBox_Num: TScrollBox
+        Align = Client
+        Size.Width = 640.000000000000000000
+        Size.Height = 407.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 640.000000000000000000
+        Viewport.Height = 407.000000000000000000
+        object LayoutN1: TLayout
+          Align = Left
+          Size.Width = 313.000000000000000000
+          Size.Height = 407.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Btn_Num_Reset: TButton
+            Position.X = 80.000000000000000000
+            Position.Y = 296.000000000000000000
+            Size.Width = 129.000000000000000000
+            Size.Height = 57.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = #52488#44592#54868
+            OnClick = Btn_Num_ResetClick
+          end
+          object Btn_Num_Start: TButton
+            Position.X = 168.000000000000000000
+            Position.Y = 176.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Text = #52628#52392
+            OnClick = Btn_Num_StartClick
+          end
+          object Btn_Num_Submit: TButton
+            Position.X = 48.000000000000000000
+            Position.Y = 176.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = #46321#47197
+            OnClick = Btn_Num_SubmitClick
+          end
+          object Edit_Num: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 3
+            Position.X = 128.000000000000000000
+            Position.Y = 61.000000000000000000
+          end
+          object Edit_Num_Count: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            TabOrder = 4
+            Position.X = 128.000000000000000000
+            Position.Y = 108.000000000000000000
+          end
+          object Lbl_Num: TLabel
+            Position.X = 40.000000000000000000
+            Position.Y = 57.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = #49707#51088' :'
+          end
+          object Lbl_Num_Total: TLabel
+            Position.X = 64.000000000000000000
+            Position.Y = 240.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = #52280#50668#51064#50896' : 0'
+          end
+          object Lbl_Selcount: TLabel
+            Position.X = 40.000000000000000000
+            Position.Y = 105.000000000000000000
+            Size.Width = 105.000000000000000000
+            Size.Height = 25.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = #52628#52392#51064#50896' :'
+          end
+        end
+        object LBox_Num_Result: TListBox
+          Align = Left
+          Position.X = 313.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 407.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 296.000000000000000000
+          Viewport.Height = 403.000000000000000000
+        end
+      end
+    end
+  end
+  object ToolBar_Title: TToolBar
+    Size.Width = 640.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Lbl_Title: TLabel
+      Align = Client
+      StyledSettings = [Family, FontColor]
+      Size.Width = 640.000000000000000000
+      Size.Height = 73.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.Style = [fsBold, fsItalic]
+      TextSettings.HorzAlign = Center
+      Text = #45208#47564#51032' '#48977#44592' '#50612#54540
+      object Btn_goHome: TButton
+        Align = Right
+        Position.X = 556.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 73.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'pagecurltoolbutton'
+        TabOrder = 0
+        Text = 'Btn_goHome'
+        OnClick = Btn_goHomeClick
+      end
+    end
+  end
+end

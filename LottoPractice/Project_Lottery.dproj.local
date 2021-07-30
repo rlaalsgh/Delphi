@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.301,=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.243,C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\뽑기어플_메뉴얼\Unit_Lottery.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.116,C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\뽑기어플_메뉴얼\Project_Lottery.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.083,=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.933,=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.243,C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\뽑기어플_메뉴얼\Unit_Lottery.fmx</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.310,=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.828,=C:\Users\Hawkeye2\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<PMyiPhone4 iOSSimulator="iPhone5" iOSDevice32="_iosdevice_7b69c88e83f0b257d399fcb0025b69feb81a7bb2"/>
+		<NoProfile iOSSimulator="iPhone5" Android="8b95ed5d"/>
+	</ActiveMobileDevice>
+</BorlandProject>
