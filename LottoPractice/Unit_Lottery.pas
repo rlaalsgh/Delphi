@@ -271,7 +271,7 @@ begin
     Lbox_Num_Result.Clear;
     SelCount := StrToInt(Edit_Num_Count.Text);
     for I := 0 to SelCount-1 do
-    begin
+    begin // 랜덤 함수 기억
       RanNum := Random(tmpListBox.Count);
       tmpListbox.ItemByIndex(RanNum).Text := '[' + IntToStr(I+1) + '등] ---' + tmpListbox.ItemByIndex(RanNum).Text;
       Lbox_Num_Result.AddObject(tmpListbox.ItemByIndex(RanNum));
@@ -312,7 +312,7 @@ begin
   end;
   Edit_Num.Text := '';
 end;
-
+//폼생성 프로시저
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   Btn_goNum.Width := ClientWidth div 2;
@@ -367,7 +367,7 @@ begin
     LastButton := Btn;
     LastButton2 := Btn2;
 
-  end
+  end// 체크박스 안먹힘;; 나중에 수정
   else if RBtn_Normal.IsChecked then
   begin
     if Item.FindComponent('ItemBtn' + IntToStr(Item.Tag)) = nil then
@@ -395,7 +395,7 @@ begin
     LastButton := Btn;
   end;
 end;
-
+// 리스트박스 클릭
 procedure TMainForm.ListBoxItemButtonClick(Sender: TObject);
 begin
   if RBtn_Normal.IsChecked then
